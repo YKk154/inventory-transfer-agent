@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>跨岛调拨台</title><link rel="stylesheet" href="/style.css"><script src="/ui.js" defer></script></head>
+<body>
+<header class="top"><div class="brand"><span class="mark" aria-hidden="true">↗</span><div>跨岛调拨台<small>库存规划与审批</small></div></div><span class="pill" id="mode">模拟环境</span></header>
+<main>
+<section class="intro"><div><p class="context">印度尼西亚 · 备件供应网络</p><h1>望加锡仓调拨决策</h1><p>选择库存与线路快照，计算到货时限内的调拨方案。</p></div><div class="sku">SKU <strong>FILTER-01</strong><span>液压滤芯</span></div></section>
+<div class="layout">
+<aside><form class="panel setup" id="form"><h2>调拨条件</h2>
+<label for="scenario">模拟场景</label><select id="scenario" required></select>
+<label for="hours">到货时限（小时）</label><input id="hours" type="number" min="1" max="168" step="1" required>
+<label for="budget">运费预算（IDR）</label><input id="budget" type="number" min="0" max="1000000000" step="1" required>
+<button id="submit" type="submit" disabled>生成调拨方案 <span aria-hidden="true">↗</span></button>
+<p id="snapshot" class="muted"></p></form>
+<section class="panel history"><h2>最近记录</h2><div id="history"><p class="muted">暂无调拨记录</p></div></section></aside>
+<section id="workspace"><div id="notice" role="status" aria-live="polite"></div><div id="result">
+<div class="panel empty"><span aria-hidden="true">↱</span><h2>待生成方案</h2><p>生成后会展示可调数量、路线与审核条款。</p></div>
+</div></section>
+</div></main>
+</body></html>

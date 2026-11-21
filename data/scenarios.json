@@ -1,0 +1,122 @@
+{
+  "warehouse_names": {
+    "MAKASSAR": "望加锡",
+    "JAKARTA": "雅加达",
+    "SURABAYA": "泗水",
+    "BALIKPAPAN": "巴厘巴板"
+  },
+  "sku": "FILTER-01",
+  "sku_name": "液压滤芯",
+  "warehouses": {
+    "MAKASSAR": {
+      "on_hand": 16,
+      "reserved": 4,
+      "history": [
+        18,
+        21,
+        20,
+        20,
+        19,
+        22,
+        20
+      ],
+      "lead_days": 2
+    },
+    "JAKARTA": {
+      "on_hand": 77,
+      "reserved": 5,
+      "history": [
+        24,
+        26,
+        24,
+        25,
+        25,
+        26,
+        25
+      ],
+      "lead_days": 3
+    },
+    "SURABAYA": {
+      "on_hand": 45,
+      "reserved": 7,
+      "history": [
+        12,
+        13,
+        11,
+        12,
+        13,
+        11,
+        12
+      ],
+      "lead_days": 2
+    },
+    "BALIKPAPAN": {
+      "on_hand": 47,
+      "reserved": 0,
+      "history": [
+        6,
+        8,
+        7,
+        7,
+        8,
+        6,
+        7
+      ],
+      "lead_days": 2
+    }
+  },
+  "lanes": [
+    {
+      "id": "JKT-MKS",
+      "origin": "JAKARTA",
+      "destination": "MAKASSAR",
+      "hours": 72,
+      "unit_cost": 30000,
+      "capacity": 100
+    },
+    {
+      "id": "SBY-MKS",
+      "origin": "SURABAYA",
+      "destination": "MAKASSAR",
+      "hours": 30,
+      "unit_cost": 55000,
+      "capacity": 38
+    },
+    {
+      "id": "BPN-MKS",
+      "origin": "BALIKPAPAN",
+      "destination": "MAKASSAR",
+      "hours": 20,
+      "unit_cost": 70000,
+      "capacity": 35
+    }
+  ],
+  "scenarios": {
+    "normal": {
+      "label": "48 小时缺货预警",
+      "as_of": "2026-11-21T09:00:00+08:00",
+      "snapshot_age": 5,
+      "deadline_hours": 48,
+      "budget": 2400000,
+      "closed": []
+    },
+    "disruption": {
+      "label": "航线临时停运",
+      "as_of": "2026-11-21T09:00:00+08:00",
+      "snapshot_age": 5,
+      "deadline_hours": 48,
+      "budget": 2400000,
+      "closed": [
+        "BPN-MKS"
+      ]
+    },
+    "stale": {
+      "label": "库存快照过期",
+      "as_of": "2026-11-21T09:00:00+08:00",
+      "snapshot_age": 32,
+      "deadline_hours": 48,
+      "budget": 2400000,
+      "closed": []
+    }
+  }
+}

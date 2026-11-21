@@ -1,0 +1,76 @@
+[
+  {
+    "id": "OPS-01@1",
+    "rule": "donor_reserve",
+    "title": "调出仓库存保护",
+    "effective": "2025-01-01",
+    "expires": "2026-05-31",
+    "destination": "*",
+    "body": "旧版仅保留安全库存。该版本已失效。",
+    "params": {
+      "z": 0.84,
+      "protect_demand": false
+    }
+  },
+  {
+    "id": "OPS-01@2",
+    "rule": "donor_reserve",
+    "title": "调出仓库存保护",
+    "effective": "2026-06-01",
+    "destination": "*",
+    "body": "调出量须扣除已预留订单，保护调出仓截止前预计需求及安全库存。可调量不得为负。",
+    "params": {
+      "z": 1.65,
+      "protect_demand": true
+    }
+  },
+  {
+    "id": "OPS-02@1",
+    "rule": "arrival",
+    "title": "到货时限与停运",
+    "effective": "2026-06-01",
+    "destination": "*",
+    "body": "到货时间不得晚于用户截止时间。停运线路不得推荐。只支持按当前快照立即发运。",
+    "params": {
+      "allow_late": false
+    }
+  },
+  {
+    "id": "OPS-03@1",
+    "rule": "budget",
+    "title": "运费与线路容量",
+    "effective": "2026-06-01",
+    "destination": "*",
+    "body": "按线路单件运费核算，合计不得超过本次预算，发运不得超过剩余线路容量。",
+    "params": {}
+  },
+  {
+    "id": "OPS-04@1",
+    "rule": "freshness",
+    "title": "库存快照时效",
+    "effective": "2026-06-01",
+    "destination": "*",
+    "body": "库存快照距模拟决策时点超过 24 小时，必须补录新数据后才能出方案。",
+    "params": {
+      "max_age_hours": 24
+    }
+  },
+  {
+    "id": "OPS-05@1",
+    "rule": "approval",
+    "title": "调拨人工审批",
+    "effective": "2026-06-01",
+    "destination": "*",
+    "body": "调拨建议需人工确认。仍有缺口时，批准部分调拨必须记录说明。",
+    "params": {}
+  },
+  {
+    "id": "OPS-03@0",
+    "rule": "budget",
+    "title": "其他仓区费用规则",
+    "effective": "2026-06-01",
+    "destination": "MEDAN",
+    "body": "棉兰仓区试验条款，与望加锡调拨无关。",
+    "params": {}
+  }
+]
